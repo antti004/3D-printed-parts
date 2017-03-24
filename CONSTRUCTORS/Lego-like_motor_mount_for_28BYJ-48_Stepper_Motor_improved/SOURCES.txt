@@ -1,0 +1,5 @@
+Sources for Lego-like motor mount for 28BYJ-48 Stepper Motor (improved)
+
+Lego compatible motor mount for 28BYJ-48 Stepper Motor (http://www.thingiverse.com/thing:151616)
+Stepper motor Part No: 28BYJ-48 (http://www.thingiverse.com/thing:122070)
+Openscad Lego-Like brick (http://www.thingiverse.com/thing:5699)
