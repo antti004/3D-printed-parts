@@ -1,5 +1,5 @@
 // Main box
-BOX_W = 85;      // width  (X)
+BOX_W = 110;      // width  (X)
 BOX_L = 45;     // length (Y)
 BOX_H = 5;    
 BOX_R = 2;
@@ -20,16 +20,15 @@ difference(){
              
     mounting_holes(BOX_W,HOLE_PADDING);
     
-    ROW1 = 3;
-    ROW2 = -14;
-    connector(-23,ROW1,CONNECTOR_PINS);
-    connector(-23,ROW2,CONNECTOR_PINS);
-
-    connector(0,ROW1,CONNECTOR_PINS);
-    connector(0,ROW2,CONNECTOR_PINS);
-    
-    connector(23,ROW1,CONNECTOR_PINS);
-    connector(23,ROW2,CONNECTOR_PINS);
+    ROW1 = -5;
+    POS_X= (BOX_W/2)-20;
+//    POS_X = -40;
+    echo(POS_X);
+    for(x= [0-POS_X:23:BOX_W/2-10]){
+        connector(x,ROW1,CONNECTOR_PINS);
+    }
+ //       connector(0,ROW1,CONNECTOR_PINS);
+//        connector(23,ROW1,CONNECTOR_PINS);
 
     
 }

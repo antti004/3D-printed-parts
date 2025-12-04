@@ -1,7 +1,7 @@
 // Main box
 BOX_W = 50;      // width  (X)
 BOX_L = 65;     // length (Y)
-BOX_H = 3;    
+BOX_H = 4;    
 BOX_R = 4;
 HOLE_PADDING = 6;
 HOLE_DIAM = 4.5;
@@ -20,6 +20,10 @@ difference(){
                 
              
    // mounting_holes(BOX_W,HOLE_PADDING);
+    
+     mounting_holes_corner(BOX_W,BOX_L,HOLE_PADDING);
+
+    
     ROW1 = 5;
     ROW2 = -15;
     for ( i = [-23:20:40]) 
@@ -54,7 +58,7 @@ module connector_holes(xPos,yPos,pins){
 
 module connector_body(xPos, yPos,pins) {
     body_w = pins * 5.08 + 2.7;   // total width of the plastic body
-    body_l = 8.1;             // depth of the body (Y direction)
+    body_l = 8.0;             // depth of the body (Y direction)
     
     y = yPos + 2.55 + body_l/2;
     
@@ -85,6 +89,26 @@ module mounting_holes(w,padding){
     hole_M3();
 
     translate([0- w/2 + padding, 0- 25/2, -0.1]) 
+    hole_M3();
+
+    
+}
+
+module mounting_holes_corner(w,h,padding){
+    // Right side
+    translate([ w/2 - padding, h/2-padding, -0.1]) 
+    hole_M3();
+    
+
+    translate([ w/2 - padding, 0- (h/2)+padding, -0.1]) 
+    hole_M3();
+
+    // Left side holes
+    translate([ 0- w/2 + padding,  h/2-padding, -0.1]) 
+    hole_M3();
+    
+
+    translate([0- w/2 + padding, 0-h/2+padding, -0.1]) 
     hole_M3();
 
     

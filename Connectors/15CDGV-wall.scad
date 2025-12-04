@@ -10,7 +10,7 @@ BOX_R = 4;
 HOLE_INSET = 4.5;
 HOLE_DIAM = 4.5;
 HOLE_FN = 30;
-
+PIN_DIST = 3.81;
 CON_COUNT = 5;  // items count
 CON_PINS = 2;   // pins on connector
 MARGIN_Y = 18;
